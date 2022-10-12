@@ -1,11 +1,10 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.App {
+  align-items: center;
+  justify-content: center;
+} 
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -13,16 +12,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 .App-link {
   color: #61dafb;
@@ -32,7 +21,147 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.navigation {
+  display: flex;
+  align-items: flex-end;
+  height: 90px;
+  width: 60%;
+  background-color: #63545B;
+  border-radius: 20px;
+  top: 85%;
+  position: fixed;
+  border: 1px solid #fff;
+}
+
+
+/*se aplica a la lista de tareas*/
+.navigation ul {
+  display: flex;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+    list-style: none;
+    width: 100%;
+    z-index: 1;
+}
+
+@media screen and (max-width: 900px) {
+
+  .navigation {
+    display: flex;
+    align-items: flex-end;
+    height: 90px;
+    width: 60%;
+    display: flex;
+    background-color: #63545B;
+    border-radius: 20px;
+    top: 85%;
+    position: fixed;
+    border: 1px solid #fff;
+  }
+
+  /*se aplica a la lista de tareas*/
+  .navigation ul {
+    margin: 0;
+    display: flex;
+    width: 100%;
+  }
+
+  .navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .navigation ul li a .icon {
+    font-size: 1.0em;
+    transition: 0.5s;
+    color: greenyellow;
+  }
+}
+
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  font-weight: 500;
+}
+
+.navigation ul li a .icon {
+  font-size: 2.5em;
+  /*
+  position: relative;
+  display: flex;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  justify-content: center;
+  */
+  transition: 0.5s;
+  color: greenyellow;
+}
+
+.navigation ul li:hover a .icon {
+  transform: translateY(-30px);
+  justify-content: center;
+  display: flex;
+}
+
+.navigation ul li a .text {
+  position: absolute;
+  color: greenyellow;
+  font-weight: 400;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.navigation ul li:hover a .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+section {
+  display: flex;
+  height: 600px;
+  width: 100%;
+  margin: 0 0;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.footer {
+  display: inline;
+  background-color: #282c34;
+  text-align: center;
+  justify-content: center;
+  color: #B5B7C6;
+}
+
+
+.myfooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconos {
+  color: #B5B7C6;
 }
