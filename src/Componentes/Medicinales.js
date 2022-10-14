@@ -1,32 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Table from 'react-bootstrap/Table';
 import MyCard from '../Cards/MyCard';
+import { resolvePath } from 'react-router-dom';
 
 //const URI = 'https://pohapp.onrender.com/api/pohapp/medicinales/get/0-0-0-0-0';
 const URI = 'http://192.168.100.186:3001/api/pohapp/medicinales/get/0-0-0-0-0';
 
-function  Medicinales (){
 
-    const listaEstudios = [
-        {
-            titulo: "Ingeniería en Sistemas Informáticos",
-            adicional: "2021-cursando",
-            contenido: `Universidad Tecnológica Intercontinental (UTIC)`
-        },
-        {
-            titulo: "Licenciatura en Análisis de Sistemas Informáticos",
-            adicional: "2013 - 2018",
-            contenido: `Universidad Tecnológica Intercontinental (UTIC)`
-        },
-        {
-            titulo: "Bachiller Técnico en Informática",
-            adicional: "2010 – 2012",
-            contenido: `Centro Educativo Técnico Privado (EducArt)`
-        },
+function Medicinales() {
 
-
-    ];
+    /*
+        const listaEstudios = [
+            {
+                cabecera: "Ingeniería en Sistemas Informáticos",
+                cuerpo: "2021-cursando",
+                imagen: `${imagen}`
+            },
+            {
+                cabecera: "Licenciatura en Análisis de Sistemas Informáticos",
+                cuerpo: "2013 - 2018",
+                imagen: `${imagen}`
+            },
+            {
+                cabecera: "Bachiller Técnico en Informática",
+                cuerpo: "2010 – 2012",
+                imagen: `${imagen}`
+            },
+    
+        ];
+    */
 
     const [medicinales, setMedicinal] = useState([])
     useEffect(() => {
@@ -38,9 +40,11 @@ function  Medicinales (){
     const getMedicinales = async () => {
 
         try {
-            await axios.get(URI).then((response) => {
-                console.log("Respuesta es: ")
-                console.log(response.data);
+            await axios.get(URI, {
+                //responseType:'blob'
+            }).then((response) => {
+                //console.log("Respuesta es: ")
+                //console.log(response.data);
                 setMedicinal(response.data);
             })
                 .catch((error) => {
@@ -55,44 +59,35 @@ function  Medicinales (){
 
     }
     return (
-        <>
+        <div>
             <div className="personal" style={{ display: `flex`, alignItems: `center`, justifyContent: `center`, textAlign: `center` }}>
-                <h1>Medicinales</h1>
+                <div className='column'>
+                    <h1>Medicinales</h1>
+                </div>
             </div>
+            <section>
+                <div className="container d-flex justify-content-center" style={{ flexWrap: `wrap` }}>
+                    {
+                        medicinales ? medicinales.map((medicina) => {
 
-            <Table striped bordered hover variant="dark">
-                <thead >
-                    <tr>
-                        <th>Id</th>
-                        <th>Descripcion</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {medicinales.map((medicinal) => (
-                        <tr key={medicinal.idpoha}>
-                            <td> {medicinal.idpoha} </td>
-                            <td> {medicinal.preparado} </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </Table>
-            <div className='App-header'>
-                <section>
-                    <h1 style={{ display: `flex`, justifyContent: `center` }}>Estudios</h1>
-                    <div className="container d-flex justify-content-center">
-                        <div className="column">
-                            <div className="row-md-4">
-                                {
-                                    listaEstudios.map((experiencia) => {
-                                        return <MyCard titulo={experiencia.titulo} adicional={experiencia.adicional} contenido={experiencia.contenido} />
-                                    })
-                                }
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </>
+                            //[70,43,2,3,22,44,64,32,]//Array Ascii
+
+                            let asciiTraducido="";
+                            
+                            medicina.img1.data.map((valor) => {
+                                //se traduce a base64
+                                asciiTraducido += String.fromCharCode(valor);
+                            })
+                            //console.log(asciiTraducido);
+
+                            return <li style={{ listStyle: `none` }} key={medicina.idpoha}>
+                                <MyCard cabecera={medicina.nombre1} cuerpo={medicina.descripcion} imagen={`data:image/jpeg;base64,${asciiTraducido}`}  />
+                            </li>
+                        }) : null
+                    }
+                </div>
+            </section>
+        </div>
     );
 }
 export default Medicinales;
