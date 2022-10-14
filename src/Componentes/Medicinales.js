@@ -1,35 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import MyCard from '../Cards/MyCard';
-import { resolvePath } from 'react-router-dom';
 
-//const URI = 'https://pohapp.onrender.com/api/pohapp/medicinales/get/0-0-0-0-0';
-const URI = 'http://192.168.100.186:3001/api/pohapp/medicinales/get/0-0-0-0-0';
+const URI = 'https://pohapp.onrender.com/api/pohapp/medicinales/get/0-0-0-0-0';
+//const URI = 'http://192.168.100.186:3001/api/pohapp/medicinales/get/0-0-0-0-0';
 
 
 function Medicinales() {
-
-    /*
-        const listaEstudios = [
-            {
-                cabecera: "Ingeniería en Sistemas Informáticos",
-                cuerpo: "2021-cursando",
-                imagen: `${imagen}`
-            },
-            {
-                cabecera: "Licenciatura en Análisis de Sistemas Informáticos",
-                cuerpo: "2013 - 2018",
-                imagen: `${imagen}`
-            },
-            {
-                cabecera: "Bachiller Técnico en Informática",
-                cuerpo: "2010 – 2012",
-                imagen: `${imagen}`
-            },
-    
-        ];
-    */
-
     const [medicinales, setMedicinal] = useState([])
     useEffect(() => {
         getMedicinales();
@@ -69,14 +46,12 @@ function Medicinales() {
                 <div className="container d-flex justify-content-center" style={{ flexWrap: `wrap` }}>
                     {
                         medicinales ? medicinales.map((medicina) => {
-
-                            //[70,43,2,3,22,44,64,32,]//Array Ascii
-
+                            
                             let asciiTraducido="";
                             
-                            medicina.img1.data.map((valor) => {
+                            medicina.img1.data.map((valor) => { 
                                 //se traduce a base64
-                                asciiTraducido += String.fromCharCode(valor);
+                                return asciiTraducido += String.fromCharCode(valor);
                             })
                             //console.log(asciiTraducido);
 
