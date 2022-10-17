@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import MyCard from '../Cards/MyCard';
 
-const URI = 'https://pohapp.onrender.com/api/pohapp/medicinales/get/0-0-0-0-0';
-//const URI = 'http://192.168.100.186:3001/api/pohapp/medicinales/get/0-0-0-0-0';
+//const URI = 'https://pohapp.onrender.com/api/pohapp/medicinales/get/0-0-0-0-0';
+//const URI = 'http://192.168.100.186:4000/api/pohapp/medicinales/get/0-0-0-0-0';
+const URI = 'http://186.158.152.141:4000/api/pohapp/medicinales/get/0-0-0-0-0';
 
 
 function Medicinales() {
