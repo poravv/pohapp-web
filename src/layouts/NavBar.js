@@ -27,9 +27,9 @@ const NavBarV1 = () => {
                             </Nav.Link>
                         </li>
                         <li className='list'>
-                            <Nav.Link as={Link} to='/Agregar' >
+                            <Nav.Link as={Link} to='/Plantas' >
                                 <span className='icon'><IoAddCircleSharp /></span>
-                                <span className='text'>Colaborar</span>
+                                <span className='text'>Prod Naturales</span>
                             </Nav.Link>
                         </li>
                     </ul>

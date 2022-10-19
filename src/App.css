@@ -40,6 +40,7 @@
 
 /*se aplica a la lista de tareas*/
 .navigation ul {
+  margin: 0;
   display: flex;
   width: 100%;
 }
