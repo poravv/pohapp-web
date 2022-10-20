@@ -17,7 +17,7 @@ function Medicinales() {
     const [mate, setMate] = useState(0);
     const [terere, setTerere] = useState(0);
     //Parametros/iddolencias-te-mate-terere-idplanta
-    const [uri, setUri] = useState('http://186.158.152.141:3000/api/pohapp/medicinales/get/0-0-0-0-0');
+    const URI = `http://186.158.152.141:3000/api/pohapp/medicinales/get/${dolencia}-${te}-${mate}-${terere}-0`;
 
 
     const [medicinales, setMedicinal] = useState([]);
@@ -32,12 +32,12 @@ function Medicinales() {
     //procedimineto para mostrar todos los Medicinales
     const getMedicinales = async () => {
         
-        setUri(`http://186.158.152.141:3000/api/pohapp/medicinales/get/${dolencia}-${te}-${mate}-${terere}-0`);
-
-        console.log(uri)
-
+        console.log(te);
+        console.log(mate);
+        console.log(terere);
+        console.log(URI);
         try {
-            await axios.get(uri, {
+            await axios.get(URI, {
                 //responseType:'blob'
             }).then((response) => {
                 //console.log("Respuesta es: ")
@@ -55,11 +55,15 @@ function Medicinales() {
     }
 
     const cambioCheck = (e)=>{
+        //e.preventDefault();
         const {name,checked} = e.target;
+        
         console.log(name,checked)
-        if (name === "te" && checked === true) { setTe(1); } else { setTe(0); }
-        if (name === "mate" && checked === true) { setMate(1); } else { setMate(0); }
-        if (name === "terere" && checked === true) { setTerere(1); } else { setTerere(0); }
+
+        if (name === "te" && checked === true) { setTe(1); } else if (name === "te" && checked === false) { setTe(0); }
+        if (name === "mate" && checked === true) { setMate(1); } else if (name === "mate" && checked === false) { setMate(0); }
+        if (name === "terere" && checked === true) { setTerere(1); } else if (name === "terere" && checked === false) { setTerere(0); }
+        
     }
 
     return (
@@ -98,6 +102,10 @@ function Medicinales() {
                         name='terere'
                         onChange={cambioCheck}
                     />
+                </label>
+                <label style={{ marginRight: `20px`, marginLeft: `10px` }}>
+                
+                <Button variant="outline-dark" onClick={getMedicinales} >Filtrar</Button>
                 </label>
                 </Form>
             </div>
