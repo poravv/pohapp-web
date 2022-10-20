@@ -34,10 +34,8 @@ function Plantas() {
     }
     return (
         <div>
-            <div className="personal" style={{ display: `flex`, alignItems: `center`, justifyContent: `center`, textAlign: `center` }}>
-                <div className='column'>
-                    <h1>Productos Naturales</h1>
-                </div>
+            <div className='header'>
+                <h1>Productos Naturales</h1>
             </div>
             <section>
                 <div className="container d-flex justify-content-center" style={{ flexWrap: `wrap` }}>

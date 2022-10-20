@@ -4,13 +4,6 @@
   justify-content: center;
 } 
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
 .App-link {
   color: #61dafb;
 }
@@ -54,38 +47,40 @@
 
 @media screen and (max-width: 900px) {
 
-  .navigation {
-    display: flex;
-    align-items: flex-end;
-    height: 90px;
-    width: 60%;
-    display: flex;
-    background-color: #63545B;
-    border-radius: 20px;
-    top: 85%;
-    position: fixed;
-    border: 1px solid #fff;
-  }
+              .navigation {
+                display: flex;
+                align-items: flex-end;
+                height: 90px;
+                width: 60%;
+                display: flex;
+                background-color: #63545B;
+                border-radius: 20px;
+                top: 85%;
+                position: fixed;
+                border: 1px solid #fff;
+              }
 
-  /*se aplica a la lista de tareas*/
-  .navigation ul {
-    margin: 0;
-    display: flex;
-    width: 100%;
-  }
+              /*se aplica a la lista de tareas*/
+              .navigation ul {
+                margin: 0;
+                display: flex;
+                width: 100%;
+              }
 
-  .navigation ul li {
-    position: relative;
-    list-style: none;
-    width: 100%;
-    z-index: 1;
-  }
+              .navigation ul li {
+                position: relative;
+                list-style: none;
+                width: 100%;
+                z-index: 1;
+              }
 
-  .navigation ul li a .icon {
-    font-size: 1.0em;
-    transition: 0.5s;
-    color: greenyellow;
-  }
+              .navigation ul li a .icon {
+                font-size: 1.0em;
+                transition: 0.5s;
+                color: greenyellow;
+              }
+
+              
 }
 
 
@@ -145,6 +140,13 @@ section {
   color: #B5B7C6;
 }
 
+.header {
+  background-color: #549D56;
+  text-align: center;
+  justify-content: center;
+  color: white;
+}
+
 
 .myfooter {
   display: flex;
@@ -154,4 +156,14 @@ section {
 
 .iconos {
   color: #B5B7C6;
+}
+
+.contenedorimg{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.contenedorimg.card {
+  justify-content:center;
+  width:700px;
 }

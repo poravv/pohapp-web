@@ -69,11 +69,9 @@ function Medicinales() {
     return (
         <div>
 
-            <div className="personal" style={{ display: `flex`, alignItems: `center`, justifyContent: `center`, textAlign: `center` }}>
-                <div className='column'>
-                    <h1>Medicinales</h1>
-                </div>
-            </div>
+        <div className='header'>
+            <h1>Medicinales</h1>
+        </div>
             <div style={{ display: `flex`, justifyContent: `center`, margin: `20px` }}>
                 <Form>
                 <label style={{ marginRight: `20px`, marginLeft: `10px` }}>
