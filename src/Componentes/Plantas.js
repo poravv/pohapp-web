@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import MyCard from '../Cards/MyCard';
 
-const URI = 'http://186.158.152.141:3000/api/pohapp/planta/getlimit/';
+const URI = 'https://pohapp.onrender.com/api/pohapp/planta/getlimit/';
 
 
 function Plantas() {
