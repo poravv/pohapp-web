@@ -11,20 +11,23 @@ import Form from 'react-bootstrap/Form';
 
 function Medicinales() {
 
-    const [dolencia, setDolencia] = useState(0);
+    //const [dolencia, setDolencia] = useState(0);
     const [te, setTe] = useState(0);
     const [mate, setMate] = useState(0);
     const [terere, setTerere] = useState(0);
     //Parametros/iddolencias-te-mate-terere-idplanta
-    const URI = `http://186.158.152.141:3000/api/pohapp/medicinales/get/${dolencia}-${te}-${mate}-${terere}-0`;
+    const URI = `https://pohapp.onrender.com/api/pohapp/medicinales/get/0-${te}-${mate}-${terere}-0`;
+    //const URI = `http://186.158.152.141:3000/api/pohapp/medicinales/get/${dolencia}-${te}-${mate}-${terere}-0`;
 
     const [medicinales, setMedicinal] = useState([]);
     
     useEffect(() => {
         getMedicinales();
+        // eslint-disable-next-line
     }, []);
     
     //procedimineto para mostrar todos los Medicinales
+    
     const getMedicinales = async () => {
         
         //console.log(te);

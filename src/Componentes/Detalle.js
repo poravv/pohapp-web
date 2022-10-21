@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
-import { Card, Container } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import ContenedorImg from './ContenedorImg';
 
 
@@ -10,11 +10,14 @@ function Detalle() {
     const { paramIdpoha } = useParams();
 
     //Parametros/iddolencias-te-mate-terere-idplanta
-    const URIDET = `http://186.158.152.141:3000/api/pohapp/medicinales/getid/${paramIdpoha}`;
+    //const URIDET = `http://186.158.152.141:3000/api/pohapp/medicinales/getid/${paramIdpoha}`;
+    
+    const URIDET = `https://pohapp.onrender.com/pohapp/medicinales/getid/${paramIdpoha}`;
 
     const [medicinal, setMedicinal] = useState([])
     useEffect(() => {
         getMedicinal();
+        // eslint-disable-next-line
     },[]);
 
 
