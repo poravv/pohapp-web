@@ -15,8 +15,7 @@ function Detalle() {
     const [medicinal, setMedicinal] = useState([])
     useEffect(() => {
         getMedicinal();
-
-    });
+    },[]);
 
 
     //procedimineto para mostrar todos los Medicinal

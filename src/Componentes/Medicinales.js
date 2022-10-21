@@ -6,19 +6,17 @@ import Card from 'react-bootstrap/Card';
 import mezcla from '../Imagenes/mezcla.png';
 import Form from 'react-bootstrap/Form';
 
-
 //const URI = 'https://pohapp.onrender.com/api/pohapp/medicinales/get/0-0-0-0-0';
 //const URI = 'http://192.168.100.186:4000/api/pohapp/medicinales/get/0-0-0-0-0';
 
 function Medicinales() {
 
-    const [dolencia, setDolencia] = useState(0);
+    //const [dolencia, setDolencia] = useState(0);
     const [te, setTe] = useState(0);
     const [mate, setMate] = useState(0);
     const [terere, setTerere] = useState(0);
     //Parametros/iddolencias-te-mate-terere-idplanta
     const URI = `http://186.158.152.141:3000/api/pohapp/medicinales/get/${dolencia}-${te}-${mate}-${terere}-0`;
-
 
     const [medicinales, setMedicinal] = useState([]);
     
@@ -26,9 +24,6 @@ function Medicinales() {
         getMedicinales();
     }, []);
     
-
-
-
     //procedimineto para mostrar todos los Medicinales
     const getMedicinales = async () => {
         
