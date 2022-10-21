@@ -27,10 +27,10 @@ function Medicinales() {
     //procedimineto para mostrar todos los Medicinales
     const getMedicinales = async () => {
         
-        console.log(te);
-        console.log(mate);
-        console.log(terere);
-        console.log(URI);
+        //console.log(te);
+        //console.log(mate);
+        //console.log(terere);
+        //console.log(URI);
         try {
             await axios.get(URI, {
                 //responseType:'blob'
@@ -53,7 +53,7 @@ function Medicinales() {
         //e.preventDefault();
         const {name,checked} = e.target;
         
-        console.log(name,checked)
+        //console.log(name,checked)
 
         if (name === "te" && checked === true) { setTe(1); } else if (name === "te" && checked === false) { setTe(0); }
         if (name === "mate" && checked === true) { setMate(1); } else if (name === "mate" && checked === false) { setMate(0); }
