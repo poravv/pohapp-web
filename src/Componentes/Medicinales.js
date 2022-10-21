@@ -11,7 +11,7 @@ import Form from 'react-bootstrap/Form';
 
 function Medicinales() {
 
-    //const [dolencia, setDolencia] = useState(0);
+    const [dolencia, setDolencia] = useState(0);
     const [te, setTe] = useState(0);
     const [mate, setMate] = useState(0);
     const [terere, setTerere] = useState(0);
